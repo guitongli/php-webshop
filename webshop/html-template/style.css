@@ -1,0 +1,66 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@700&family=Montserrat:wght@100&family=Quicksand:wght@300;600&display=swap");
+button,
+button:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+.dark-font {
+  color: #203030;
+}
+
+.light-font {
+  color: #bbbeeb;
+}
+
+.green-font {
+  color: #8eaaa2;
+}
+
+.dark-bg {
+  background-color: #203030;
+}
+
+.light-bg {
+  background-color: #bbbeeb;
+}
+
+.green-bg {
+  background-color: #8eaaa2;
+}
+
+#top .owl-carousel .item .product a {
+  overflow: hidden;
+}
+#top .owl-carousel .item .product img {
+  transition: transform 0.5s ease;
+}
+#top .owl-carousel .item .product img:hover {
+  transform: scale(1.1);
+}
+#top .owl-carousel .owl-nav button {
+  position: absolute;
+  top: 30%;
+  outline: none;
+}
+#top .owl-carousel .owl-nav button.owl-prev {
+  left: 0;
+  font-size: 35px;
+  color: #bbbeeb;
+  margin-left: -4rem;
+  padding: 0.1rem;
+}
+#top .owl-carousel .owl-nav button.owl-next {
+  right: 0;
+  font-size: 35px;
+  color: #bbbeeb;
+  margin-right: -4rem;
+  padding: 0.1rem;
+}
+
+#filter .grid .grid-item {
+  margin-top: 1.2rem;
+  margin-left: 1rem;
+}
+
+/*# sourceMappingURL=style.css.map */

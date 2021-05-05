@@ -1,0 +1,22 @@
+@import "./variables.scss";
+
+.dark-font {
+	color: $color-dark;
+}
+.light-font {
+	color: $color-light;
+}
+.green-font {
+	color: $color-green;
+}
+
+.dark-bg {
+	background-color: $color-dark;
+}
+.light-bg {
+	background-color: $color-light;
+}
+
+.green-bg {
+	background-color: $color-green;
+}
