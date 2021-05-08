@@ -6,12 +6,13 @@ $(document).ready(function () {
     }
     );
     $("#top .owl-carousel").owlCarousel({
-        loop: true,
+        loop: false,
         nav: true,
         dots: false,
+            autoheight:true,
         responsive: {
-            0: { items: 1 },
-            600: { items: 1 },
+            0: { items: 4 },
+            600: { items: 4 },
             1000: { items: 4 }
         },
 
@@ -35,6 +36,7 @@ $(document).ready(function () {
         loop: true,
         nav: true,
         dots: false,
+        autoheight:true,
         responsive: {
             0: { items: 1 },
             600: { items: 1 },

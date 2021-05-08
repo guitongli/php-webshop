@@ -1,9 +1,15 @@
+<?php
+$item_id=$_GET['item_id']?? 1;
+foreach($product->getData() as $item):
+	if($item['item_id']==$item_id):
+?>
+
 <section id="product" class="py-3">
 				<div class="container">
 					<div class="row">
 						<div class="col-sm-6 col-12">
 							<img
-								src="assets/carousel-1.jpeg"
+								src="<?php echo $item['item_image']??'./assets/carousel-1.jpeg'?>"
 								alt="banner-1"
 								class="img-fluid"
 							/>
@@ -29,8 +35,8 @@
 							</div>
 						</div>
 						<div class="col-sm-6 py-5">
-							<h5>Item Name</h5>
-							<small>by Sumsung</small>
+							<h5><?php echo $item['item_name']??'Unknown';?></h5>
+							<small>category: <?php echo $item['item_filter']??'Unknown';?> </small>
 							<div class="rating text-warning font-small">
 								<span><i class="fas fa-star"></i></span>
 								<span><i class="fas fa-star"></i></span>
@@ -46,7 +52,7 @@
 							<table class="my-3">
 								<tr class="sand">
 									<td>MRP</td>
-									<td><strike>$4</strike></td>
+									<td><strike>$<?php echo $item['item_price']??'Unknown';?></strike></td>
 								</tr>
 								<tr class="sand">
 									<td>Deal Price</td>
@@ -210,3 +216,8 @@
 					</div>
 				</div>
 			</section>
+
+			<?php 
+			endif;
+			endforeach;
+			?>
