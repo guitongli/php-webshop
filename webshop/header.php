@@ -94,7 +94,7 @@
 							></span>
 							<span
 								class="px-3 py-2 rounded-pill dark-font light-bg"
-								>0</span
+								><?php echo count($product->getData('cart'));?></span
 							>
 						</a>
 					</form>

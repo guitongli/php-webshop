@@ -8,19 +8,28 @@
 
 					<div class="row">
 						<div class="col-sm-9">
+							<?php 
+ 
+							foreach($product->getData('cart') as $item):
+							$cart=$product->getProduct($item['item_id']);
+							//  print_r ($cart);
+								$subtotal=array_map(function($item){
+								 
+								 ?>
+						
 							<!--cart item-->
 							<div class="row border-top py-3 mt-3">
 								<div class="col-sm-3">
 									<img
-										src="./assets/carousel-2.jpeg"
+										src="<?php echo $item['item_image']?>"
 										alt="cart1"
 										class="img-fluid"
 										height="height:120px"
 									/>
 								</div>
 								<div class="col-sm-7">
-									<h5>Product Name</h5>
-									<small>by brand**</small>
+									<h5><?php echo $item['item_name']?></h5>
+									<small><?php echo $item['item_filter']?></small>
 									<!--product rating-->
 									<div class="d-flex">
 										<div
@@ -102,107 +111,16 @@
 								</div>
 								<div class="col-sm-2 text-right">
 									<div class="sand text-danger">
-										$ <span class="product-price">152</span>
+										$ <span class="product-price"><?php echo $item['item_price']?></span>
 									</div>
 								</div>
-							</div>
-							<div class="row border-top py-3 mt-3">
-								<div class="col-sm-3">
-									<img
-										src="./assets/carousel-2.jpeg"
-										alt="cart1"
-										class="img-fluid"
-										height="height:120px"
-									/>
-								</div>
-								<div class="col-sm-7">
-									<h5>Product Name</h5>
-									<small>by brand**</small>
-									<!--product rating-->
-									<div class="d-flex">
-										<div
-											class="rating text-warning font-small"
-										>
-											<span
-												><i class="fas fa-star"></i
-											></span>
-											<span
-												><i class="fas fa-star"></i
-											></span>
-											<span
-												><i class="fas fa-star"></i
-											></span>
-											<span
-												><i class="fas fa-star"></i
-											></span>
-											<span
-												><i class="fas fa-star"></i
-											></span>
-										</div>
-										<a href="" class="sand font-small"
-											>2 ratings</a
-										>
-									</div>
-									<!--product rating-->
-
-									<!--product quantity-->
-									<div class="qty d-flex pt-2">
-										<div class="d-flex sand w-25">
-											<div class="col-6">
-												<div class="qty d-flex">
-													<h6 class="py-2 sand">
-														Qty
-													</h6>
-													<div
-														class="px-4 d-flex sand"
-													>
-														<button
-															class="qty-up border bg-light"
-															data-id="pro2"
-														>
-															<i
-																class="fas fa-angle-up"
-															></i></button
-														><input
-															type="text"
-															class="qty-input border px-4 w-100 bg-light disabled"
-															value="1"
-															placeholder="1"
-															data-id="pro2"
-														/>
-														<button
-															class="qty-down border bg-light"
-															data-id="pro2"
-														>
-															<i
-																class="fas fa-angle-down"
-															></i>
-														</button>
-													</div>
-													<button
-														type="submit"
-														class="btn text-danger px-3 border-right"
-													>
-														Delete
-													</button>
-													<button
-														type="submit"
-														class="btn text-danger"
-													>
-														Save
-													</button>
-												</div>
-											</div>
-										</div>
-									</div>
-									<!--product quantity-->
-								</div>
-								<div class="col-sm-2 text-right">
-									<div class="sand text-danger">
-										$ <span class="product-price">152</span>
-									</div>
-								</div>
-							</div>
+							</div> 
+							<?php 
+							return $item['item_price'];
+						},$cart);
+						// closing map function
+						endforeach;
+						print_r($subtotal);?>
 						</div>
 						<!--subtotal section-->
 
