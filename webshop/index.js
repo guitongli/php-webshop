@@ -49,12 +49,16 @@ $(document).ready(function () {
     // let $input = $('.qty .qty-input')
 
     $qty_up.click(function (e) {
+
+    $.ajax({ url:'template/ajax.php', type:'post', data:{item_id:$(this).data('id')}, success:function(result){
+        console.log($result);
+    }})
        let number = $(this).data('id');
         
        let $input=$(".qty-input[data-id="+number+"]");
 
 console.log($input.val());
-        if ($input.val() >= 1 && $input.val() <= 9) {
+        if ($input.val() >= 0 && $input.val() <= 9) {
 
             $input.val(function (i, oldval) {
                 return ++oldval;

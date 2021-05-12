@@ -1,4 +1,5 @@
 <?php
+ob_start();
 // header 
 include('header.php');
 ?>
@@ -16,3 +17,5 @@ include('./template/_sale.php');
  <?php
         include('footer.php');
         ?>
+
+        

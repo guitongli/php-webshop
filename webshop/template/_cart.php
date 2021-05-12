@@ -1,7 +1,16 @@
-	<main id="main-site">
+
+
+<?php if($_SERVER['REQUEST_METHOD']=='POST'){
+	if(isset($_POST['delete-cart-submit'])){
+$deletedRecord = $cart->deleteCart($_POST['item_id']);
+
+	}
+}?>
+
+<main id="main-site">
 			<!-- shoppint cart section-->
 
-			<div id="cart" class="py-3">
+			<div id="cart" class="py-3"> 
 				<div class="container-fluid w-75">
 					<h5 class="sand font-big">Shopping Cart</h5>
 					<!--shopping cart items-->
@@ -11,9 +20,9 @@
 							<?php 
  
 							foreach($product->getData('cart') as $item):
-							$cart=$product->getProduct($item['item_id']);
+							$currentProduct=$product->getProduct($item['item_id']);
 							//  print_r ($cart);
-								$subtotal=array_map(function($item){
+								$subtotal[]=array_map(function($item){
 								 
 								 ?>
 						
@@ -70,44 +79,49 @@
 													>
 														<button
 															class="qty-up border bg-light"
-															data-id="pro1"
+															data-id="<?php echo $item['item_id']?? 0;?>"
 														>
 															<i
 																class="fas fa-angle-up"
 															></i></button
 														><input
 															type="text"
-															class="qty-input border px-4 w-100 bg-light disabled green-font"
+															class="qty-input border px-4 w-100 bg-light green-font"
 															value="1"
-															placeholder="1"
-															data-id="pro1"
+															placeholder="1" autocomplete="off"
+															data-id="<?php echo $item['item_id']?? 0;?>"
 														/>
 														<button
 															class="qty-down border bg-light"
-															data-id="pro1"
+															data-id="<?php echo $item['item_id']?? 0;?>"
 														>
 															<i
 																class="fas fa-angle-down"
 															></i>
 														</button>
 													</div>
+													<form method='POST'>
+													<input type="hidden" value='<?php echo $item['item_id']?>' name='item_id'>
 													<button
 														type="submit"
+														name='delete-cart-submit'
 														class="btn text-danger px-3 border-right"
 													>
 														Delete
 													</button>
+														</form>
 													<button
 														type="submit"
 														class="btn text-danger"
 													>
 														Save
 													</button>
+												
 												</div>
 											</div>
 										</div>
 									</div>
-									<!--product quantity-->
+									<!--product quantity--> 
 								</div>
 								<div class="col-sm-2 text-right">
 									<div class="sand text-danger">
@@ -117,10 +131,12 @@
 							</div> 
 							<?php 
 							return $item['item_price'];
-						},$cart);
+						},$currentProduct);
+ 
 						// closing map function
 						endforeach;
-						print_r($subtotal);?>
+						print_r($subtotal);
+						?>
 						</div>
 						<!--subtotal section-->
 
@@ -132,13 +148,14 @@
 								</h6>
 								<div class="border-top py-4">
 									<h5 class="font-small">
-										Subtotal (2 items) &nbsp;
+										Subtotal (<?php echo isset($subtotal)?count($subtotal):0;?>
+									 items) &nbsp;
 										<div class="text-danger">
 											$
 											<span
 												class="text-danger"
 												id="deal-price"
-												>152,00</span
+												><?php echo isset($subtotal)?$cart->getSum($subtotal):0;?></span
 											>
 										</div>
 									</h5>
