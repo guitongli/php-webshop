@@ -61,7 +61,18 @@ if(isset($userId)&&isset($itemId)){
          return $result;
         }
     }
-
+ public function deleteWishlist($item_id=null, $table='wishlist'){
+        if($item_id != null){
+            $result=$this->db->con->query("DELETE FROM {$table} WHERE item_id = {$item_id};");
+     
+       if($result){
+           header('Location:'.$_SERVER['PHP_SELF']);
+       } else{
+           print_r('hey');
+       }
+         return $result;
+        }
+    }
     public function getCartId($cartArray=null, $key='item_id'){
         if($cartArray != null){
             $cart_id=array_map(function($value)use($key){
@@ -70,6 +81,20 @@ if(isset($userId)&&isset($itemId)){
             return $cart_id;
         }
 
+    }
+
+    //save for later
+
+    public function saveForLater($item_id=null, $saveTable='wishlist', $fromTable='cart'){
+        if($item_id != null){
+            $query ="INSERT INTO {$saveTable} SELECT * FROM ($fromTable) WHERE item_id={$item_id}; ";
+            $query.= "DELETE FROM {$fromTable} WHERE item_id={$item_id};";
+            $result= $this->db->con->multi_query($query);
+            if($result){
+                header("Location:".$_SERVER['PHP_SELF']);
+            };
+            return $result;
+        }
     }
 
 }

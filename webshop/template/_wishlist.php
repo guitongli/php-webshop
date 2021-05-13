@@ -1,14 +1,15 @@
 
 
 <?php if($_SERVER['REQUEST_METHOD']=='POST'){
-	if(isset($_POST['delete-cart-submit'])){
-$deletedRecord = $cart->deleteCart($_POST['item_id']);
+	if(isset($_POST['delete-wishlist-submit'])){
+ $cart->deleteWishlist($_POST['item_id']);
 
-	};
-	 if(isset($_POST['wishlist-submit'])){
-		$cart->saveForLater($_POST['item_id']);
-	};
-	
+    };
+    if(isset($_POST['cart-submit'])){
+ $cart->saveForLater($_POST['item_id'], 'cart', 'wishlist');
+
+    };
+   
 }?>
 
 <main id="main-site">
@@ -16,14 +17,14 @@ $deletedRecord = $cart->deleteCart($_POST['item_id']);
 
 			<div id="cart" class="py-3"> 
 				<div class="container-fluid w-75">
-					<h5 class="sand font-big">Shopping Cart</h5>
+					<h5 class="sand font-big">Wishlist</h5>
 					<!--shopping cart items-->
 
 					<div class="row">
 						<div class="col-sm-9">
 							<?php 
  
-							foreach($product->getData('cart') as $item):
+							foreach($product->getData('wishlist') as $item):
 							$currentProduct=$product->getProduct($item['item_id']);
 							//  print_r ($cart);
 								$subtotal[]=array_map(function($item){
@@ -75,57 +76,30 @@ $deletedRecord = $cart->deleteCart($_POST['item_id']);
 										<div class="d-flex sand w-25">
 											<div class="col-6">
 												<div class="qty d-flex">
-													<h6 class="py-2 sand">
-														Qty
-													</h6>
-													<div
-														class="px-4 d-flex sand"
-													>
-														<button
-															class="qty-up border bg-light"
-															data-id="<?php echo $item['item_id']?? 0;?>"
-														>
-															<i
-																class="fas fa-angle-up"
-															></i></button
-														><input
-															type="text"
-															class="qty-input border px-4 w-100 bg-light green-font"
-															value="1"
-															placeholder="1" autocomplete="off"
-															data-id="<?php echo $item['item_id']?? 0;?>"
-														/>
-														<button
-															class="qty-down border bg-light"
-															data-id="<?php echo $item['item_id']?? 0;?>"
-														>
-															<i
-																class="fas fa-angle-down"
-															></i>
-														</button>
-													</div>
+												
+												
 													<form method='POST'>
 													<input type="hidden" value='<?php echo $item['item_id']?>' name='item_id'>
 													<button
 														type="submit"
-														name='delete-cart-submit'
-														class="btn text-danger px-3 border-right"
+														name='delete-wishlist-submit'
+														class="btn text-danger pl-0 pr-3 border-right"
 													>
 														Delete
 													</button>
 														</form>
-														<form method='POST'>
+													
+                                                    <form method='POST'>
 													<input type="hidden" value='<?php echo $item['item_id']?>' name='item_id'>
 													<button
 														type="submit"
-														class="btn text-danger text-nowrap"
-														name='wishlist-submit'
+														class="btn text-danger text-nowrap pb-3"
+                                                        name='cart-submit'
 													>
-														Save for later
+														add to cart
 													</button>
 														</form>
-														 
-													
+                                                        
 												
 												</div>
 											</div>
@@ -148,37 +122,6 @@ $deletedRecord = $cart->deleteCart($_POST['item_id']);
 						// print_r($subtotal);
 						?>
 						</div>
-						<!--subtotal section-->
-
-						<div class="col-sm-3">
-							<div class="sub-total text-center mt-3 border">
-								<h6 class="font-small text-success py-3">
-									<i class="fas fa-check"></i>&nbsp;Free
-									delivery
-								</h6>
-								<div class="border-top py-4">
-									<h5 class="font-small">
-										Subtotal (<?php echo isset($subtotal)?count($subtotal):0;?>
-									 items) &nbsp;
-										<div class="text-danger">
-											$
-											<span
-												class="text-danger"
-												id="deal-price"
-												><?php echo isset($subtotal)?$cart->getSum($subtotal):0;?></span
-											>
-										</div>
-									</h5>
-									<button
-										type="submit"
-										class="btn btn-warning m-3"
-									>
-										Proceed to Buy
-									</button>
-								</div>
-							</div>
-						</div>
-						<!--subtotal section-->
 					</div>
 					<!--shopping cart items-->
 				</div>

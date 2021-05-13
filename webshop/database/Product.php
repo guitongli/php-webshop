@@ -31,9 +31,9 @@ class Product{
          
         while($item= mysqli_fetch_array($result, MYSQLI_ASSOC)){
             $resultArray[]=$item;
-            echo $item;
+            // echo $item;
         }
-    
+    // return $item;
         return $resultArray;
     }
 }

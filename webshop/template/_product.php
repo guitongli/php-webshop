@@ -1,7 +1,14 @@
 <?php
+	if($_SERVER['REQUEST_METHOD']=='POST'){
+		if(isset($_POST['product'])){
+		$cart->addCart($_POST['user_id'], $_POST['item_id']);
+		echo 'inserted';}
+	}
+	
 $item_id=$_GET['item_id']?? 1;
 foreach($product->getData() as $item):
 	if($item['item_id']==$item_id):
+
 ?>
 
 <section id="product" class="py-3">
@@ -25,12 +32,22 @@ foreach($product->getData() as $item):
 									</button>
 								</div>
 								<div class="col px-2">
-									<button
+								<?php if(in_array($item['item_id'],$cart->getCartId($product->getData('cart'))??[])){
+										echo '<button
 										type="submit"
-										class="btn btn-warning form-control"
-									>
-										Add to Cart
-									</button>
+										class="btn btn-success font-big"
+										name="product">
+										delete from cart
+									</button> ';
+										} else { echo "<button
+										type='submit'
+										class='btn btn-warning font-big form-control'
+										name='product'>
+										add to cart
+									</button> ";
+										};
+										
+										?>
 								</div>
 							</div>
 						</div>
