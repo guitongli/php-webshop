@@ -1,0 +1,1 @@
+this template is designed and built for FingerstyleChina, but the legal rights is reserved by Guitong Li. 
