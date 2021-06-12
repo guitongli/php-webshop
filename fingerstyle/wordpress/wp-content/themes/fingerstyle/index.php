@@ -261,3 +261,26 @@
 			</div>
 		</div>
 	</main>
+
+
+
+<?php
+if(have_posts()){
+	while(have_posts()){
+		the_post();
+		the_content();
+        the_title();
+		the_excerpt();
+		
+        get_template_part('template-parts/content','archive');
+	};
+}
+?>
+<?php the_posts_pagination()?>
+
+<?php get_header()?> 
+<div class="test-area">
+
+
+</div>
+<?php get_footer()?>

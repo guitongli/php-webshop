@@ -1,4 +1,4 @@
-archive
+page
 <div class="blog-container d-flex flex-column align-items-center">
                 <h1 class="blog-title headline"><?= the_title()?></h1>
                 <div class="blog-hero col-sm-5">
@@ -8,19 +8,12 @@ archive
                 <?php the_post_thumbnail_url('thumbnail');
                  
 ?>
-                <h1>here is something</h1>
-
-<?php the_excerpt();
-the_permalink();
-                 
-?>
-<?php the_title();
-                 
-?>
+                    
 
             </div>
             
             
 
 </div>
- 
+
+            
