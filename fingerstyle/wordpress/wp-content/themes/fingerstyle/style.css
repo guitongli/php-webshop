@@ -49,7 +49,7 @@ a:hover {
 .arrow {
 	position: fixed;
 	bottom: 15vh;
-	left: 60%;
+	left: 50%;
 	margin-left: -20px;
 	width: 40px;
 	height: 40px;
@@ -138,7 +138,7 @@ section {
 }
 .intro h1 .box {
 	position: absolute;
-	top: 2vw;
+
 	display: inline-block;
 	background-color: #fca311;
 	height: 0.5vw;
@@ -217,7 +217,7 @@ header.sticky {
 
 .nav {
 	justify-content: end;
-	padding-right: 2rem;
+	/* padding-right: 1rem; */
 }
 
 .nav__items__item {
@@ -228,6 +228,9 @@ header.sticky {
 	font-family: "Cabin", sans-serif;
 	font-weight: 700;
 	text-decoration: none;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	overflow: hidden;
 }
 
 .nav__items__item:hover {
@@ -268,8 +271,11 @@ header.sticky {
 }
 
 @media screen and (max-width: 768px) {
+	.burger {
+		margin-top: 4vh;
+	}
 	.logo {
-		height: 100px;
+		height: 40px;
 	}
 
 	.nav {
@@ -286,6 +292,12 @@ header.sticky {
 		z-index: 99;
 		transform: translate(0);
 		transition: all 0.5s ease-in-out;
+	}
+	.site-title {
+		font-size: 1.2rem;
+	}
+	.site-title:hover {
+		font-size: 1.2rem;
 	}
 	.nav__items {
 		flex-direction: column;
@@ -612,6 +624,11 @@ a:hover {
 
 footer {
 	background-color: black;
+}
+
+.sub-menu {
+	visibility: hidden;
+	position: absolute;
 }
 
 /*# sourceMappingURL=style.css.map */

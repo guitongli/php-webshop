@@ -42,5 +42,4 @@
 		<div class="burger" id="burger">
 			<span className="burger-line"></span>
 		</div>
-	<h2><?php dynamic_sidebar('sidebar-1');?></h2>
 	</header>
