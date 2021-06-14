@@ -19,7 +19,7 @@
 				$logo = wp_get_attachment_image_src($custom_logo_id);
 			}?>
 			<img src="<?= $logo[0]?>" class="logo img-fluid" />
-			<a class ='site-title pt-lg-4 mb-0' href='#'><?php echo get_bloginfo('name');?></a>
+			<a class ='site-title pt-lg-4 mb-0' href='<?php get_home_url()?>'><?php echo get_bloginfo('name');?></a>
 		</div>
 <div class="nav col-sm-8 justify-content-end my-2 pt-4" id="nav">
 		<?php

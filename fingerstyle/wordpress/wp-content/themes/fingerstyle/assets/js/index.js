@@ -306,4 +306,16 @@ $(".filter-group").on("click", "button", function () {
 
 });
 
+$('#menu-item-65').on('mouseover',function(){
+   console.log('hovered');
+  $('.sub-menu').css('visibility','visible');
+ 
+})
+$('#menu-item-65').on('mouseleave',function(){
+   console.log('hovered');
+  $('.sub-menu').css('visibility','hidden');
+ 
+})
+
+
 });

@@ -1,9 +1,9 @@
 
 // banner
-let duration = 10,
-		sections = gsap.utils.toArray(".panel"),
-		sectionIncrement = duration / (sections.length-1),
-		tl = gsap.timeline({
+let duration = 10;
+		let sections = gsap.utils.toArray(".panel");
+	let	sectionIncrement = duration / (sections.length-1);
+	let 	tl2 = gsap.timeline({
 			scrollTrigger: {
 				trigger: ".container",
 				pin: true,
@@ -14,7 +14,7 @@ let duration = 10,
 			}
 		});
 
-tl.to(sections, {
+tl2.to(sections, {
   xPercent: -100 * (sections.length -1),
   duration: duration,
   ease: "none"

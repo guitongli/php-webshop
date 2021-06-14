@@ -627,6 +627,10 @@ footer {
 }
 
 .sub-menu {
+	background-color: black;
+	list-style-type: none;
+	display: flex;
+	justify-items: center;
 	visibility: hidden;
 	position: absolute;
 }
