@@ -1,18 +1,40 @@
 <?php
 
+// add_action('admin_init', 'custom_metabox');
 
+
+// function custom_metabox (){
+//     add_meta_box('event-date','Event Date', [$this, 'meta_box_html'], ['post'],'side');
+// };
+
+// function custom_metabox_field(){
+//     echo 'hi';
+// };
 class wpc_event_date {
     public function __construct(){
         add_action('add_meta_boxes', [$this, 'create_meta_box']);
+        add_action('save_post',[$this, 'save_date']);
     }
     public function create_meta_box(){
-        add_meta_box('wpc_date','Event Date', [$this, 'meta_box_html'], ['posts']);
+        add_meta_box('event-date','Event Date', [$this, 'meta_box_html'], ['post']);
+    }
+
+    public function save_date($post_id){
+        if(isset($_POST['wpc_event_date']) && is_numeric($_POST['wpc_event_date'])){
+$editor_id=sanitize_text_field($_POST['wpc_event_date']);
+update_post_meta($spot_id,'wpc_event_date', $event_date);
+        }
+        var_dump($_POST['wpc_event_date']);
     }
     public function meta_box_html(){
-        echo 'hez';
+      ?>
+      <label for="event-date">Event Date</label>
+<input type="date"/>
+      <?php
     }
 }
 new wpc_event_date();
+
 
 
 // function theme_support (){
