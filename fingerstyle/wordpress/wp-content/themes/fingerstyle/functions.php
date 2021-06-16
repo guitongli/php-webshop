@@ -16,19 +16,20 @@ class wpc_event_date {
         add_action('save_post',[$this, 'save_date']);
     }
     public function create_meta_box(){
-        add_meta_box('event-date','Event Date', [$this, 'meta_box_html'], ['post']);
+        add_meta_box('event_date','Event Date', [$this, 'meta_box_html'], ['post']);
     }
 
     public function save_date($post_id){
-        if(isset($_POST['wpc_event_date']) && is_numeric($_POST['wpc_event_date'])){
-$editor_id=sanitize_text_field($_POST['wpc_event_date']);
-update_post_meta($spot_id,'wpc_event_date', $event_date);
+        if(isset($_POST['event_date']) && is_numeric($_POST['event_date'])){
+$editor_id=sanitize_text_field($_POST['event_date']);
+update_post_meta($spot_id,'event_date', $event_date);
         }
-        var_dump($_POST['wpc_event_date']);
+        var_dump($_POST['event_date']);
+        echo "hello";
     }
     public function meta_box_html(){
       ?>
-      <label for="event-date">Event Date</label>
+      <label for="event_date">Event Date</label>
 <input type="date"/>
       <?php
     }
