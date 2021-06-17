@@ -20,17 +20,17 @@ class wpc_event_date {
     }
 
     public function save_date($post_id){
-        if(isset($_POST['event_date']) && is_numeric($_POST['event_date'])){
-$editor_id=sanitize_text_field($_POST['event_date']);
-update_post_meta($spot_id,'event_date', $event_date);
-        }
+//         if(isset($_POST['event_date']) && is_numeric($_POST['event_date'])){
+// $editor_id=sanitize_text_field($_POST['event_date']);
+// update_post_meta($spot_id,'event_date', $event_date);
+//         }
         var_dump($_POST['event_date']);
         echo "hello";
     }
     public function meta_box_html(){
       ?>
       <label for="event_date">Event Date</label>
-<input type="date"/>
+<input name ='event_date' type="date"/>
       <?php
     }
 }
