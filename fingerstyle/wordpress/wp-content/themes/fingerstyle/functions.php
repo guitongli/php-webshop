@@ -1,6 +1,26 @@
 <?php
 
-// add_action('admin_init', 'custom_metabox');
+add_action('admin_init', 'custom_metabox');
+function custom_metabox(){
+    add_meta_box('event_date','Event Date', 'custom_metabox_field','post', 'normal','low');
+}
+
+function custom_metabox_field(){
+    global $post;
+    $data = get_post_custom($post->ID);
+    $val=isset($data['event_date'])? esc_attr($data['event_date'][0]):'no value';
+    echo '<input type="text" name="event_date" id="event_date" value="'.$val.'"/>';
+}
+
+add_action('save_post','save_date');
+function save_date(){
+    global $post;
+//     if(define('DOING_AUTOSAVE') && DOING_AUTOSAVE){
+// return $post->ID;        
+//     }
+    update_post_meta($post->ID,'event_date',$POST['event_date']);
+}
+
 
 
 // function custom_metabox (){
@@ -10,31 +30,32 @@
 // function custom_metabox_field(){
 //     echo 'hi';
 // };
-class wpc_event_date {
-    public function __construct(){
-        add_action('add_meta_boxes', [$this, 'create_meta_box']);
-        add_action('save_post',[$this, 'save_date']);
-    }
-    public function create_meta_box(){
-        add_meta_box('event_date','Event Date', [$this, 'meta_box_html'], ['post']);
-    }
+// class wpc_event_date {
+//     public function __construct(){
+//         add_action('add_meta_boxes', [$this, 'create_meta_box']);
+//         add_action('save_post',[$this, 'save_date']);
+//     }
+//     public function create_meta_box(){
+//         add_meta_box('event_date','Event Date', [$this, 'meta_box_html'], ['post']);
+//     }
 
-    public function save_date($post_id){
-//         if(isset($_POST['event_date']) && is_numeric($_POST['event_date'])){
-// $editor_id=sanitize_text_field($_POST['event_date']);
+//     public function save_date($post_id){
+//         if(isset($_POST['event_date'])){
+// $event_date=sanitize_text_field($_POST['event_date']);
 // update_post_meta($spot_id,'event_date', $event_date);
 //         }
-        var_dump($_POST['event_date']);
-        echo "hello";
-    }
-    public function meta_box_html(){
-      ?>
-      <label for="event_date">Event Date</label>
-<input name ='event_date' type="date"/>
-      <?php
-    }
-}
-new wpc_event_date();
+//         var_dump($_POST['event_date']);
+//         echo "hello";
+//     }
+//     public function meta_box_html(){
+//         var_dump(get_post_meta(get_the_ID(),'event_date', true))
+
+//       <label for="event_date">Event Date</label>
+// <input name ='event_date' type="date"/> -->
+
+//     }
+// }
+// new wpc_event_date();
 
 
 
