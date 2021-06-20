@@ -5,10 +5,10 @@
                 </div>
                 <div class="meta-data"><span>pushlished on <?php the_date()?></span><span class = 'date'></span><span class = 'tag'></span></div>
                 <?php the_content();
-             
-		the_content();
+              $custom_post_type = get_post_meta($post->ID, 'event_date', true);
+    echo $custom_post_type;
        
-        the_excerpt();
+      
                 the_tags('<span class="tag"><i class="fa fa-tag"></i>)','</span><span class="tag"><i class="fa fa-tag"></i>','</span>');
                 
 ?>

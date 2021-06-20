@@ -29,12 +29,13 @@ while($query-> have_posts()):$query-> the_post();
 ?>
 				<section class="panel red">
 					<span class='banner-date'>
-						<?php the_content();?>
+						<?php  $custom_date = get_post_meta($post->ID, 'event_date', true);
+    echo $custom_date;?>
 
 
 					</span>
-					<p class='banner-event'><?php the_title();?></p>
-					<img src="<?php the_post_thumbnail_url('thumbnail');
+					<!-- <p class='banner-event'><?php the_title();?></p> -->
+					<img src="<?php the_post_thumbnail_url('post-thumbnail');
                  
 ?>" />
 				</section>

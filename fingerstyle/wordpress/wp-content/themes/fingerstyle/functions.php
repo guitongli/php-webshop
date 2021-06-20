@@ -8,8 +8,10 @@ function custom_metabox(){
 function custom_metabox_field(){
     global $post;
     $data = get_post_custom($post->ID);
-    $val=isset($data['event_date'])? esc_attr($data['event_date'][0]):'no value';
-    echo '<input type="text" name="event_date" id="event_date" value="'.$val.'"/>';
+    // var_dump($data['event_date']);
+    $val=isset($data['event_date'])? 
+   esc_attr( $data['event_date'][0]):'';
+    echo '<input type="date" name="event_date" id="event_date" value="'.$val.'"/>';
 }
 
 add_action('save_post','save_date');
@@ -18,7 +20,7 @@ function save_date(){
 //     if(define('DOING_AUTOSAVE') && DOING_AUTOSAVE){
 // return $post->ID;        
 //     }
-    update_post_meta($post->ID,'event_date',$POST['event_date']);
+    update_post_meta($post->ID,'event_date',$_POST['event_date']);
 }
 
 

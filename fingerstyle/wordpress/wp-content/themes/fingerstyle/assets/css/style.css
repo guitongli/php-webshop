@@ -100,12 +100,13 @@ section {
 	object-fit: cover;
 	object-position: 50% 50%;
 }
-.panel .banner-event {
+.banner-event {
 	position: absolute;
 	width: 700px;
 	top: 40%;
 	padding: 49px;
-	font-weight: 300;
+	margin-left: 10vw;
+	font-weight: 800;
 	color: white;
 	font-size: 4rem;
 }

@@ -1,7 +1,10 @@
 
 <?php get_header()?>
-<?php if(have_posts()){
+<?php while(have_posts()){
     the_post();
-    the_content();
+  
+   
+    get_template_part('template-parts/content','article');
+
 }?>
 <?php get_footer()?>

@@ -105,8 +105,10 @@ section {
 	width: 700px;
 	top: 40%;
 	padding: 49px;
-	font-weight: 300;
-	color: white;
+	margin-left: 100px;
+	font-weight: 800;
+	color: black;
+
 	font-size: 4rem;
 }
 .panel .banner-date {
