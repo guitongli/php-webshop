@@ -103,8 +103,8 @@ function fc_register_scripts(){
     wp_enqueue_script('easepack', "https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/EasePack.min.js", array(),"3.6.1", true);
     wp_enqueue_script('smoothscrollbar', "https://cdnjs.cloudflare.com/ajax/libs/smooth-scrollbar/8.6.1/smooth-scrollbar.min.js", array(),"8.6.1", true);
     wp_enqueue_script('isotope', "https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js", array(),"3.0.6", true);
-    wp_enqueue_script('snap', get_template_directory_uri()."/assets/js/snap.js", array('jquery'),"1.0", true);
-    wp_enqueue_script('index', get_template_directory_uri()."/assets/js/index.js", array('jquery'),"1.0", true);
+    wp_enqueue_script('snap', get_template_directory_uri()."/assets/js/snap.js", array('jquery'),"", true);
+    wp_enqueue_script('index', get_template_directory_uri()."/assets/js/index.js", array('jquery'),"", true);
     }
 
 add_action('wp_enqueue_scripts', 'fc_register_scripts');

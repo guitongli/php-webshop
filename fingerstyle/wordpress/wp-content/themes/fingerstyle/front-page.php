@@ -17,29 +17,33 @@
 					</div>
 				</section>
 
-<?php 
-$args= array(
-	'post_type'=>'post',
-	'posts_per_page'=>3,
-	'orderby' =>'date',
-	'order'=>'DESC'
+<?php
+$args = array(
+    'post_type' => 'post',
+    'posts_per_page' => 3,
+    'orderby' => 'date',
+    'order' => 'DESC',
 );
-$query= new WP_Query($args);
-while($query-> have_posts()):$query-> the_post();
-?>
-				<section class="panel red">
-					<span class='banner-date'>
-						<?php  $custom_date = get_post_meta($post->ID, 'event_date', true);
-    echo $custom_date;?>
+$query = new WP_Query($args);
+while ($query->have_posts()): $query->the_post();
+    ?>
+					<section class="panel red">
+						<!-- <span class='banner-date'>
+							<?php $custom_date = get_post_meta($post->ID, 'event_date', true);
+                              echo $custom_date;?>
 
 
-					</span>
-					<!-- <p class='banner-event'><?php the_title();?></p> -->
-					<img src="<?php the_post_thumbnail_url('post-thumbnail');
-                 
-?>" />
-				</section>
-				<?php endwhile; wp_reset_query();?>
+						</span>
+						<p class='banner-event'><?php the_title();?></p> -->
+
+
+						<a href="<?php echo get_permalink($post->ID); ?>">
+						<img src="<?php the_post_thumbnail_url('post-thumbnail');
+
+    ?>" /></a>
+					</section>
+					<?php endwhile;
+wp_reset_query();?>
 				<!-- <section class="panel orange">
 					<span class='banner-date'>
 						20 Aug 2021
@@ -72,7 +76,7 @@ while($query-> have_posts()):$query-> the_post();
 					<div class="feature ipsSpacer_bottom_double ipsGrid ipsGrid_collapsePhone">
 						<div class="featured-image-container ipsGrid_span5 gs_reveal gs_reveal_fromLeft">
 							<div class="card">
-								<img width="479" src="./assets/asset4.png" alt="" />
+								<img class = 'front-page-img' width="479" src="<?php echo get_template_directory_uri()?>/assets/images/contest.jpeg" alt="" />
 							</div>
 						</div>
 
@@ -86,7 +90,9 @@ while($query-> have_posts()):$query-> the_post();
 							<h3>International guitar contest series branded as "WAGF" and ukulele contests branded as
 								"MAUF" provide yearly opportunies for all guitarists to showcase their original music
 								and playing skills. </h2>
-								<a href="#">learn more</a>
+							 
+ 
+								<a href="<?php echo get_category_link(get_cat_ID( 'Competitions' ));?>">learn more</a>
 								</p>
 						</div>
 					</div>
@@ -98,13 +104,14 @@ while($query-> have_posts()):$query-> the_post();
 								<strong>Concerts</strong>
 							</h2>
 							<h3> With influence reaching all Chineses provinces we hold yearly 120 concerts in a year
-								</h2>
-								<a href="#">learn more</a>
+								</h3>
+								
+								<a href="<?php echo get_category_link( get_cat_ID( 'Concerts' ) );?>">learn more</a>
 						</div>
 
 						<div class="featured-image-container ipsGrid_span5 gs_reveal gs_reveal_fromRight">
 							<div class="card">
-								<img width="479" src="https://picsum.photos/479/479?index=2" alt="" />
+								<img width="479" src="<?php echo get_template_directory_uri()?>/assets/images/concert.jpeg" alt="" />
 							</div>
 						</div>
 					</div>
@@ -112,7 +119,7 @@ while($query-> have_posts()):$query-> the_post();
 					<div class="feature ipsSpacer_bottom_double ipsGrid ipsGrid_collapsePhone">
 						<div class="featured-image-container ipsGrid_span5 gs_reveal gs_reveal_fromLeft">
 							<div class="card">
-								<img width="479" src="https://picsum.photos/479/479?index=3" alt="" />
+								<img width="479" src="<?php echo get_template_directory_uri()?>/assets/images/education.png" alt="" />
 							</div>
 						</div>
 
@@ -125,7 +132,9 @@ while($query-> have_posts()):$query-> the_post();
 								We hold regular Masterclasses and publish guitar books tailored for guitar players of
 								all levels
 							</h3>
-							<a href="#">download brochure (Chinese)</a>
+							
+								<a href="<?php echo get_category_link(get_cat_ID( 'Masterclass' ));?>">learn more</a>
+						</div>
 						</div>
 					</div>
 
@@ -138,12 +147,13 @@ while($query-> have_posts()):$query-> the_post();
 								We connect a network of more than a million guitar lovers via wechat, weibo, offline
 								events and local outreaches
 							</h3>
-							<a href="#">reach out</a>
+							
+							<a href="<?php echo get_permalink( get_page_by_title( 'Connect' ) )?>">reach out</a>
 						</div>
 
 						<div class="featured-image-container ipsGrid_span5 gs_reveal gs_reveal_fromRight">
 							<div class="card">
-								<img width="479" src="https://picsum.photos/479/479?index=4" alt="" />
+								<img width="479" src="<?php echo get_template_directory_uri()?>/assets/images/network photo.jpeg" alt="" />
 							</div>
 						</div>
 					</div>
@@ -151,117 +161,15 @@ while($query-> have_posts()):$query-> the_post();
 			</div>
 		</div>
 		<hr>
-		<div class="news">
-			<h1 class='headline text-center'>Coming up</h1>
-			<div id="filters" class="filter-group d-flex justify-content-center mb-4">
-				<button class="btn is-checked " data-filter="*">All</button>
+		<?php
+get_template_part('template-parts/content', 'news');?>
 
-
-				<button class="btn is-checked" data-filter=".contests">
-					Contests
-				</button>
-
-
-				<button class="btn is-checked" data-filter=".talents">
-					Talents
-				</button>
-
-				<button class="btn is-checked" data-filter=".concerts">
-					Concerts
-				</button>
-			</div>
-			<div class="grid">
-				<div class="grid-item concerts border m-2 p-3">
-							<a href="#"
-								><img
-									src="./assets/asset1.jpg"
-									class="blog-preview"
-							/></a>
-							<div
-								class="blog-text d-flex align-items-center justify-content-around"
-							>
-								<div
-									class="blog-date d-flex flex-column align-items-center"
-								>
-									<span class="day">12</span>
-									<span class="month">May</span>
-								</div>
-
-								<div class="blog-headlines">
-									<h3 class="blog-title">
-										Competition result is out
-									</h3>
-									<h4 class="blog-intro">
-										and the prizes are...
-									</h4>
-									<a href="#" class="p-1">read more...</a>
-								</div>
-							</div>
-						</div>
-				<div class="grid-item contests border m-2 p-3">
-							<a href="#"
-								><img
-									src="./assets/asset1.jpg"
-									class="blog-preview"
-							/></a>
-							<div
-								class="blog-text d-flex align-items-center justify-content-around"
-							>
-								<div
-									class="blog-date d-flex flex-column align-items-center"
-								>
-									<span class="day">12</span>
-									<span class="month">May</span>
-								</div>
-
-								<div class="blog-headlines">
-									<h3 class="blog-title">
-										Competition result is out
-									</h3>
-									<h4 class="blog-intro">
-										and the prizes are...
-									</h4>
-									<a href="#" class="p-1">read more...</a>
-								</div>
-							</div>
-						</div>
-				<div class="grid-item talents border m-2 p-3">
-							<a href="#"
-								><img
-									src="./assets/asset1.jpg"
-									class="blog-preview"
-							/></a>
-							<div
-								class="blog-text d-flex align-items-center justify-content-around"
-							>
-								<div
-									class="blog-date d-flex flex-column align-items-center"
-								>
-									<span class="day">12</span>
-									<span class="month">May</span>
-								</div>
-
-								<div class="blog-headlines">
-									<h3 class="blog-title">
-										Competition result is out
-									</h3>
-									<h4 class="blog-intro">
-										and the prizes are...
-									</h4>
-									<a href="#" class="p-1">read more...</a>
-								</div>
-							</div>
-						</div>
-				 
-			</div>
-		</div>
-		<hr>
 		<div class="contact p-3">
 			<h1 class="headline text-center">Get in Touch</h1>
 			<div class="contact-container d-flex justify-content-around">
 				<div class="contact-head col-sm-2 pb-5"><img src="./assets/color-logo.jpeg" class="img-fluid">
 					 </div>
-				
+
 				<form action="" class="form-row col-sm-7 pb-5">
 					<div class=" d-flex flex-column">
 						<input type="email" class="form-control m-2" placeholder="Email*" />

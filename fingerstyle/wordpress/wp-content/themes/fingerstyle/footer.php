@@ -41,12 +41,13 @@
 	<div class="copyright text-center bg-dark text-white py-2">
 		<p>
 			&copy;Copyright 2020. Designed by
-			<a href="guitong.de">Guitong</a>
+			<a href="www.guitong.de">Guitong</a>
 		</p>
     </div>
     <script type="text/javascript">
   
 </script>
+
 <?php
 wp_footer();?>
 

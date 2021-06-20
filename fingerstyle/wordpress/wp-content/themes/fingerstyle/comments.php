@@ -3,8 +3,7 @@ if(!have_comments()){
    echo 'leave a comment';
 } else {
    echo get_comments_number().'Comments';
-} ?>
-<h2>check</h2>
+} ?> 
 <?php
 wp_list_comments(array('avatar_size'=>120,
 'style'=>'div'

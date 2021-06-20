@@ -25,6 +25,9 @@ Author URL: http://www.guitong.de
 	padding: 0;
 }
 
+main {
+	overflow-x: hidden;
+}
 a {
 	text-decoration: none;
 	color: #1d273d;
@@ -634,6 +637,31 @@ footer {
 	justify-items: center;
 	visibility: hidden;
 	position: absolute;
+}
+
+.event-date {
+	color: #fca311;
+	font-size: 3rem;
+	font-weight: 800;
+	position: relative;
+	font-family: "Cabin", sans-serif;
+	top: 100px;
+}
+.excerpt {
+	/* color: #fca311; */
+	position: relative;
+	top: -80px;
+}
+
+.publish-date {
+	margin-top: 100px;
+	font-size: 0.8rem;
+}
+
+.front-page-img {
+	height: 700px;
+	object-fit: cover;
+	object-position: 70% 0;
 }
 
 /*# sourceMappingURL=style.css.map */

@@ -1,4 +1,4 @@
-front page
+
 <?php get_header()?>
 <div class="test-area">
 <?php if(have_posts()){

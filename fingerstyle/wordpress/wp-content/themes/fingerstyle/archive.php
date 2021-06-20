@@ -1,3 +1,4 @@
+<?php get_header()?>
 <?php
 the_category();
 if(have_posts()){
@@ -8,7 +9,7 @@ if(have_posts()){
 }
 ?>
 
-<?php get_header()?>
+
 <div class="test-area">
 
 
