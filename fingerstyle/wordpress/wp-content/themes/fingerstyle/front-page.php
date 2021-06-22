@@ -76,7 +76,7 @@ wp_reset_query();?>
 					<div class="feature ipsSpacer_bottom_double ipsGrid ipsGrid_collapsePhone">
 						<div class="featured-image-container ipsGrid_span5 gs_reveal gs_reveal_fromLeft">
 							<div class="card">
-								<img class = 'front-page-img' width="479" src="<?php echo get_template_directory_uri()?>/assets/images/contest.jpeg" alt="" />
+								<img class = 'front-page-img' width="479" src="<?php echo get_template_directory_uri()?>/assets/images/contest.jpg" alt="" />
 							</div>
 						</div>
 
@@ -111,7 +111,7 @@ wp_reset_query();?>
 
 						<div class="featured-image-container ipsGrid_span5 gs_reveal gs_reveal_fromRight">
 							<div class="card">
-								<img width="479" src="<?php echo get_template_directory_uri()?>/assets/images/concert.jpeg" alt="" />
+								<img width="479" src="<?php echo get_template_directory_uri()?>/assets/images/concerts.jpg" alt="" />
 							</div>
 						</div>
 					</div>
@@ -119,7 +119,7 @@ wp_reset_query();?>
 					<div class="feature ipsSpacer_bottom_double ipsGrid ipsGrid_collapsePhone">
 						<div class="featured-image-container ipsGrid_span5 gs_reveal gs_reveal_fromLeft">
 							<div class="card">
-								<img width="479" src="<?php echo get_template_directory_uri()?>/assets/images/education.png" alt="" />
+								<img width="479" src="<?php echo get_template_directory_uri()?>/assets/images/masterclass.jpg" alt="" />
 							</div>
 						</div>
 
@@ -153,7 +153,7 @@ wp_reset_query();?>
 
 						<div class="featured-image-container ipsGrid_span5 gs_reveal gs_reveal_fromRight">
 							<div class="card">
-								<img width="479" src="<?php echo get_template_directory_uri()?>/assets/images/network photo.jpeg" alt="" />
+								<img width="479" src="<?php echo get_template_directory_uri()?>/assets/images/network.jpg" alt="" />
 							</div>
 						</div>
 					</div>
@@ -162,26 +162,9 @@ wp_reset_query();?>
 		</div>
 		<hr>
 		<?php
-get_template_part('template-parts/content', 'news');?>
-
-		<div class="contact p-3">
-			<h1 class="headline text-center">Get in Touch</h1>
-			<div class="contact-container d-flex justify-content-around">
-				<div class="contact-head col-sm-2 pb-5"><img src="./assets/color-logo.jpeg" class="img-fluid">
-					 </div>
-
-				<form action="" class="form-row col-sm-7 pb-5">
-					<div class=" d-flex flex-column">
-						<input type="email" class="form-control m-2" placeholder="Email*" />
-						<input type="url" class="form-control  m-2" placeholder="URL" />
-						<input type="text" class="form-control  m-2" placeholder="Message*" />
-						<button type="submit" class="btn btn-primary mx-2">
-							Submit
-						</button>
-					</div>
-				</form>
-			</div>
-		</div>
+get_template_part('template-parts/content', 'news');
+get_template_part('template-parts/content', 'contact');?>
+		
 	</main>
 
 

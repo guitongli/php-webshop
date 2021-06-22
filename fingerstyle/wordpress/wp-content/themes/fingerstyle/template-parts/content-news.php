@@ -50,7 +50,7 @@
         //     )
     )
 );
-while ($events->have_posts()): $query->the_post();?>
+while ($events->have_posts()): $events->the_post();?>
 
 
 						 <div class="grid-item border m-2 p-3 <?php the_tags();?>">
@@ -69,7 +69,7 @@ while ($events->have_posts()): $query->the_post();?>
 												class="blog-date d-flex flex-column align-items-center"
 											>
 												<span class="day"><?php $custom_date = get_post_meta($post->ID, 'event_date', true);
-    echo $custom_date;?></span>
+                                              echo $custom_date;?></span>
 											</div>
 
 											<div class="blog-headlines">

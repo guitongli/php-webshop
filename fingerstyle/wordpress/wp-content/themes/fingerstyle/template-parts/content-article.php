@@ -9,7 +9,7 @@
                 <?php the_content();
               
       
-                the_tags('<span class="tag"><i class="fa fa-tag"></i>)','</span><span class="tag"><i class="fa fa-tag"></i>','</span>');
+                the_tags('<span class=" mt-5 tag"><i class="fa fa-tag"></i>','</span><span class="tag"><i class="fa fa-tag"></i>','</span>');
                 
 ?>
  <div class="meta-data publish-date"><span>Pushlished on <?php the_date()?></span><span class = 'date'></span><span class = 'tag'></span></div>
