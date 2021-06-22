@@ -82,7 +82,7 @@ add_action('init', 'menus');
 function fc_register_styles(){
 
     $version= wp_get_theme()->get('Version');
-    wp_enqueue_style('scss', get_template_directory_uri()."/assets/css/style.css", array('bootstrap', 'fontawesome'),"1.0",'all');
+    wp_enqueue_style('scss', get_template_directory_uri()."/assets/css/style.css", array('bootstrap', 'fontawesome'),"",'all');
     wp_enqueue_style('bootstrap', "https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css", array(),$version,'all');
     wp_enqueue_style('fontawesome', "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css", array(),"5.15.3",'all');
     wp_enqueue_style('owlcarousel', "https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css", array(),"2.3.4",'all');

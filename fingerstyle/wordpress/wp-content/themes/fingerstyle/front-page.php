@@ -13,16 +13,29 @@
 						</h1>
 
 
-						<div class="arrow bounce"></div>
+						<div class="bounce"><div class="arrow"></div><h2>coming up</h2></div> 
 					</div>
 				</section>
 
 <?php
+     
 $args = array(
     'post_type' => 'post',
     'posts_per_page' => 3,
-    'orderby' => 'date',
-    'order' => 'DESC',
+   
+ 
+	'orderby' => 'meta_value', // We want to organize the events by date
+        'meta_key' => 'event_date', // Grab the "start date" field created via "More Fields" plugin (stored in YYYY-MM-DD format)
+        'order' => 'ASC', // ASC is the other option
+        'posts_per_page' => '-1', // Let's show them all.
+        'meta_query' => array( // WordPress has all the results, now, return only the events after today's date
+            array(
+                'key' => 'event_date', // Check the start date field
+                'value' => date("Y-m-d"), // Set today's date (note the similar format)
+                'compare' => '>=', // Return the ones greater than today's date
+                'type' => 'DATE', // Let WordPress know we're working with date
+            ),
+        ),
 );
 $query = new WP_Query($args);
 while ($query->have_posts()): $query->the_post();
@@ -76,7 +89,7 @@ wp_reset_query();?>
 					<div class="feature ipsSpacer_bottom_double ipsGrid ipsGrid_collapsePhone">
 						<div class="featured-image-container ipsGrid_span5 gs_reveal gs_reveal_fromLeft">
 							<div class="card">
-								<img class = 'front-page-img' width="479" src="<?php echo get_template_directory_uri()?>/assets/images/contest.jpg" alt="" />
+								<img class = 'img-fluid' class = 'front-page-img' width="479" src="<?php echo get_template_directory_uri()?>/assets/images/contest.jpg" alt="" />
 							</div>
 						</div>
 
@@ -111,7 +124,7 @@ wp_reset_query();?>
 
 						<div class="featured-image-container ipsGrid_span5 gs_reveal gs_reveal_fromRight">
 							<div class="card">
-								<img width="479" src="<?php echo get_template_directory_uri()?>/assets/images/concerts.jpg" alt="" />
+								<img class = 'img-fluid' width="479" src="<?php echo get_template_directory_uri()?>/assets/images/concerts.jpg" alt="" />
 							</div>
 						</div>
 					</div>
@@ -119,7 +132,7 @@ wp_reset_query();?>
 					<div class="feature ipsSpacer_bottom_double ipsGrid ipsGrid_collapsePhone">
 						<div class="featured-image-container ipsGrid_span5 gs_reveal gs_reveal_fromLeft">
 							<div class="card">
-								<img width="479" src="<?php echo get_template_directory_uri()?>/assets/images/masterclass.jpg" alt="" />
+								<img class = 'img-fluid' width="479" src="<?php echo get_template_directory_uri()?>/assets/images/masterclass.jpg" alt="" />
 							</div>
 						</div>
 
@@ -153,7 +166,7 @@ wp_reset_query();?>
 
 						<div class="featured-image-container ipsGrid_span5 gs_reveal gs_reveal_fromRight">
 							<div class="card">
-								<img width="479" src="<?php echo get_template_directory_uri()?>/assets/images/network.jpg" alt="" />
+								<img class = 'img-fluid' width="479" src="<?php echo get_template_directory_uri()?>/assets/images/network.jpg" alt="" />
 							</div>
 						</div>
 					</div>

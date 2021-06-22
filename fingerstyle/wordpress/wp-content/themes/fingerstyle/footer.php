@@ -6,10 +6,9 @@
 				<div class="col-lg-3">
 					<h4 class="">Fingerstyle China</h4>
 					<p class="font-small sand text-white-50">
-						Lorem, ipsum dolor sit amet consectetur adipisicing
-						elit. Necessitatibus quas commodi, aliquid rerum
-						facere excepturi a at et inventore facilis?
+						Impressum
 					</p>
+					
 				</div>
 				<div class="col-lg-4 col-12">
 					<h4 class="font-big">News Letter</h4>
@@ -32,7 +31,16 @@
 					</div>
 				</div>
 				<div class="col-lg-2 col-12">
-					<h4>Account</h4>
+					 <p>Find us on:</p>
+					
+					<i class="fab fa-facebook-square"></i>
+ 
+
+<i class="fab fa-youtube-square"></i>
+
+<i class="fab fa-twitter-square"></i>
+
+
 				</div>
 			</div>
 		</div>
@@ -41,7 +49,7 @@
 	<div class="copyright text-center bg-dark text-white py-2">
 		<p>
 			&copy;Copyright 2020. Designed by
-			<a href="www.guitong.de">Guitong</a>
+			www.guitong.de
 		</p>
     </div>
     <script type="text/javascript">

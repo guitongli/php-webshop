@@ -50,12 +50,6 @@ a:hover {
 }
 
 .arrow {
-	position: fixed;
-	bottom: 15vh;
-	left: 50%;
-	margin-left: -20px;
-	width: 40px;
-	height: 40px;
 	/**
     * Dark Arrow Down
     */
@@ -66,6 +60,14 @@ a:hover {
 .bounce {
 	animation: bounce 2s infinite;
 	animation-delay: 3s;
+	position: absolute;
+
+	bottom: 15vh;
+	left: 90%;
+	top: 50%;
+	margin-left: -20px;
+	width: 249px;
+	height: 40px;
 }
 
 @keyframes bounce {
@@ -507,7 +509,7 @@ h2.heading_large {
 }
 
 .blog-preview {
-	width: 500px;
+	height: 200px;
 }
 
 .button-group {
@@ -536,13 +538,20 @@ h2.heading_large {
 .blog-title {
 	font-weight: bold;
 	font-family: "Cabin", sans-serif;
+	font-size: 1.4rem;
+}
+.blog-preview-title {
+	font-weight: bold;
+	font-family: "Cabin", sans-serif;
 	font-size: 2.4rem;
+	width: 400px;
 }
 
 .grid-item {
 	border-radius: 8px;
 	margin: 50px;
-	display: inline-block;
+	display: flex;
+	height: 240px;
 }
 .grid-item h3 {
 	margin: 3px;
@@ -588,6 +597,9 @@ a:hover {
 	font-weight: 800;
 }
 
+li {
+	list-style-type: none;
+}
 .headline {
 	font-weight: 700;
 	font-size: 5.5rem;
@@ -664,4 +676,14 @@ footer {
 	object-position: 70% 0;
 }
 
+.blog-hero {
+	max-height: 600px;
+
+	max-width: 60%;
+}
+
+.category-description {
+	width: 80vw;
+	font-weight: 200;
+}
 /*# sourceMappingURL=style.css.map */
