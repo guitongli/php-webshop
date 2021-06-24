@@ -62,12 +62,13 @@ a:hover {
 	animation-delay: 3s;
 	position: absolute;
 
-	bottom: 15vh;
+	bottom: 10vh;
 	left: 90%;
 	top: 50%;
-	margin-left: -20px;
+
 	width: 249px;
 	height: 40px;
+	font-size: 0.5rem;
 }
 
 @keyframes bounce {
@@ -515,6 +516,9 @@ h2.heading_large {
 .button-group {
 	flex-direction: column;
 }
+.blog {
+	width: 80%vw;
+}
 
 .blog-text {
 	margin-left: 10px;
@@ -683,7 +687,10 @@ footer {
 }
 
 .category-description {
-	width: 80vw;
+	width: 90vw;
 	font-weight: 200;
+}
+.icon {
+	font-size: 2rem;
 }
 /*# sourceMappingURL=style.css.map */

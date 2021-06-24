@@ -86,7 +86,7 @@ while ($events->have_posts()): $events->the_post();?>
 												<span class="day"><?php $custom_date = get_post_meta($post->ID, 'event_date', true);
                                               echo $custom_date;?></span>
 											</div>
-											<a href="<?php echo get_permalink($post->ID); ?>" class="p-1">	<h3 class="blog-preview-title">
+											<a href="<?php echo get_permalink($post->ID); ?>" >	<h3 class="blog-preview-title">
 													<?php the_title();?>
 												</h3>
 												<h4 class="blog-intro">
@@ -100,7 +100,7 @@ while ($events->have_posts()): $events->the_post();?>
 						
 						
 						  <?php endwhile;
-wp_reset_query();?> 
+wp_reset_query();?> <?php the_posts_pagination()?>
 
 </div>
 </div>

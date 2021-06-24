@@ -13,7 +13,7 @@
 						</h1>
 
 
-						<div class="bounce"><div class="arrow"></div><h2>coming up</h2></div> 
+						<div class="bounce"><div class="arrow"></div><h2>coming up...</h2></div> 
 					</div>
 				</section>
 
@@ -82,7 +82,7 @@ wp_reset_query();?>
 		<div class="introduction">
 			<div class="cInnerContent">
 				<h2 class="header-section headline gs_reveal ipsType_center">
-					Fingerstyle China
+					FingerstyleChina
 				</h2>
 
 				<div class="features">

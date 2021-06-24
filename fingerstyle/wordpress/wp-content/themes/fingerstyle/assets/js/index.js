@@ -49,6 +49,27 @@ jQuery(document).ready(function ($) {
 		masterTl.add(tl);
 	});
 
+	var duration = 10,
+	sections = gsap.utils.toArray(".panel"),
+	sectionIncrement = duration / (sections.length - 1),
+	tl = gsap.timeline({
+		scrollTrigger: {
+			trigger: ".container",
+			pin: true,
+			scrub: 1,
+			snap: 1 / (sections.length - 1),
+			start: "top top",
+			end: "+=5000",
+		},
+	});
+	console.log('hihi');
+	
+
+tl.to(sections, {
+	xPercent: -100 * (sections.length - 1),
+	duration: duration,
+	ease: "none",
+}); 
 	// everything below this is just for the fading/scaling up which is NOT scrubbed - it's all dynamic, triggered when each section enters/leaves so that the fading/scaling occurs at a consistent rate no matter how fast you scroll!
 	sections.forEach((section, index) => {
 		let tween = gsap.from(section, {

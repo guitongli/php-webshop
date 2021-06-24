@@ -1,6 +1,6 @@
 
-<div class="blog d-flex border p-5 align-items-center">
-<a href="#"
+<div class="blog d-flex border m-2 align-items-center">
+                                 <a href="#"
 											>
 
 											<img
@@ -30,12 +30,12 @@
 											 
 											</div>
 										</div>
-									</div>
+									
 						
 
 
 
-            </div>
+           
 
 
 

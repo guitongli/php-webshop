@@ -33,12 +33,12 @@
 				<div class="col-lg-2 col-12">
 					 <p>Find us on:</p>
 					
-					<i class="fab fa-facebook-square"></i>
+					<i class=" icon fab fa-facebook-square"></i>
  
 
-<i class="fab fa-youtube-square"></i>
+<i class="icon fab fa-youtube-square"></i>
 
-<i class="fab fa-twitter-square"></i>
+<i class="icon fab fa-twitter-square"></i>
 
 
 				</div>
