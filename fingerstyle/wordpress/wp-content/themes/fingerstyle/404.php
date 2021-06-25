@@ -9,3 +9,4 @@ get_search_form();
  <?php get_template_part('template-parts/content','news');?>
 </div>
 <?php get_footer()?>
+

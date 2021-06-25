@@ -21,7 +21,7 @@
                 
                 <img src="<?php echo get_template_directory_uri()?>/assets/images/color-logo.jpeg" class="img-fluid">
 					
-<p class = 'text-center mt-5'>北京市朝阳区朝阳路中国第一商城B座9D</p> </div>
+<p class = 'text-center mt-5'>Address: China First Mall B 9D, Chaoyang Road, Bejiing</p> </div>
 				<form action="" class="form-row col-sm-7 pb-5">
 					<div class=" d-flex flex-column">
 <input type="text" class="form-control m-2" name='name' placeholder='Full Name'>
