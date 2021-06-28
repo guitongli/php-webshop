@@ -9,6 +9,7 @@
     $txt = $name . 'sent you the following message: \n\n' . $message;
     mail($mailTo, $subject, $txt, $headers);
     header('Location:' . get_page_link() . '?mailsend');
+    echo 'sent';
 }
 ?>
  
