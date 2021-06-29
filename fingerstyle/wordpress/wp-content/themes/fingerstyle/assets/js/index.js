@@ -64,7 +64,7 @@ jQuery(document).ready(function ($) {
 	});
 	console.log('hihi');
 	
-
+// snap and recurring snaps
 tl.to(sections, {
 	xPercent: -100 * (sections.length - 1),
 	duration: duration,
