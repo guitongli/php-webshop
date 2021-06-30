@@ -99,7 +99,7 @@ wp_reset_query();?>
 
 								<strong>Concerts</strong>
 							</h2>
-							<h3> With influence reaching all Chineses provinces we hold yearly 120 concerts in a year
+							<h3> With influence reaching all Chineses provinces we hold over 120 concerts in a year
 								</h2>
 								<a href="#">learn more</a>
 						</div>
